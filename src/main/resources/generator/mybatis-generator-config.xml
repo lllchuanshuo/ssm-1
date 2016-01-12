@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<properties resource="generator/init.properties" />
+	<context id="MySQLTables" targetRuntime="MyBatis3"
+		defaultModelType="flat">
+		<!-- 文件编码 -->
+		<property name="javaFileEncoding" value="UTF-8"></property>
+		<!-- Java文件格式化 -->
+		<property name="javaFormatter"
+			value="org.mybatis.generator.api.dom.DefaultJavaFormatter"></property>
+		<!-- XML文件格式化 -->
+		<property name="xmlFormatter"
+			value="org.mybatis.generator.api.dom.DefaultXmlFormatter"></property>
+
+		<!-- 插件定义，用来扩展生成的SQL -->
+		<!-- type 指定插件类名，该类继承org.mybatis.generator.api.PluginAdapter -->
+		<!-- <plugin type=""></plugin> -->
+
+		<!-- 注释生成定义标记 -->
+		<!-- type 自定义注释类型，该类继承org.mybatis.generator.api.CommentGenerator 可选项，不加使用默认值 -->
+
+		<commentGenerator>
+			<!-- 是否包含注释，true不加注释，false加注释，默认值false -->
+			<property name="suppressAllComments" value="true"></property>
+			<!-- 注释中是否增加时间，true不加，false增加，默认值false -->
+			<property name="suppressDate" value="true"></property>
+		</commentGenerator>
+
+		<!-- JDBC连接配置 -->
+		<jdbcConnection driverClass="${jdbc.driver}"
+			connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}">
+		</jdbcConnection>
+
+		<!-- Java类型处理器 -->
+		<javaTypeResolver>
+			<!-- true: BigDecimal 匹配DECIMAL和NUMERIC类型 false：默认，根据长度匹配 -->
+			<property name="forceBigDecimals" value="false"></property>
+		</javaTypeResolver>
+
+		<!-- 生成实体类 -->
+		<javaModelGenerator targetPackage="${model.package}"
+			targetProject="${model.project}">
+			<!-- 生成带参数的构造器，默认值false -->
+			<property name="constructorBased" value="false"></property>
+			<!-- 在targetPackage下根据数据库schema再生成一层package，生成的实体类放于该目录下，默认值false -->
+			<!-- <property name="enableSubPackages" value="false"></property> -->
+			<!-- 是否创建一个不可变的类，及无setter实体类，默认值false -->
+			<!-- <property name="immutable" value="false"></property> -->
+			<!-- 设置根对象 -->
+			<!-- <property name="rootClass" value=""></property> -->
+			<!-- 设置在getter方法中，对String类型字段调用trim方法，默认值false -->
+			<property name="trimStrings" value="true"></property>
+		</javaModelGenerator>
+
+		<!-- 生成mapper.xml映射文件 -->
+		<sqlMapGenerator targetPackage="${mapper.package}"
+			targetProject="${mapper.project}">
+			<!-- 在targetPackage下根据数据库schema再生成一层package，生成的映射文件放于该目录下，默认值false -->
+			<!-- <property name="enableSubPackages" value="false"></property> -->
+		</sqlMapGenerator>
+
+		<!-- 生成dao接口 -->
+		<!-- type: ANNOTATEDMAPPER 注解形式 不生成xml文件 MIXEDMAPPER 混合形式 复杂SQL生成在xml文件中 
+			XMLMAPPER XML形式 SQL文件生成在xml文件中 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="${dao.package}" targetProject="${dao.project}">
+			<!-- 在targetPackage下根据数据库schema再生成一层package，生成的映射文件放于该目录下，默认值false -->
+			<!-- <property name="enableSubPackages" value="false"></property> -->
+			<!-- 设置父接口 -->
+			<!-- <property name="rootInterface" value=""></property> -->
+		</javaClientGenerator>
+
+		<!-- 需要生成的表 -->
+		<table tableName="tb_user" domainObjectName="User" enableInsert="true"
+			enableCountByExample="false" enableSelectByPrimaryKey="true"
+			enableSelectByExample="false" enableUpdateByPrimaryKey="true"
+			enableUpdateByExample="false" enableDeleteByPrimaryKey="true"
+			enableDeleteByExample="false">
+			<!-- 是否使用数据库列原名，false为驼峰状，默认值false -->
+			<!-- <property name="useActualColumnNames" value="false"></property> -->
+			<!-- 主键生成器 -->
+			<!-- <generatedKey column="" sqlStatement="" identity="" type=""></generatedKey> -->
+			<!-- 利用正则表达式对列名进行处理，如替换前缀后缀等 -->
+			<!-- <columnRenamingRule searchString="" replaceString=""></columnRenamingRule> -->
+			<!-- 忽略列 -->
+			<!-- <ignoreColumn column="" delimitedColumnName=""></ignoreColumn> -->
+			<!-- 对于生成结果的列进行自定义 -->
+			<!-- <columnOverride column="" property="" javaType="" jdbcType="" typeHandler="" 
+				delimitedColumnName=""></columnOverride> -->
+		</table>
+	</context>
+</generatorConfiguration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
