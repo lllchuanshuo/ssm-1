@@ -5,9 +5,9 @@ create database if not exists db_demo default character set utf8 collate utf8_ge
 -- 使用数据库
 use db_demo;
 -- 删除表
-drop table if exists tb_user;
+drop table if exists tb_operator;
 -- 创建表并设置相关存储引擎和字符编码
-create table if not exists tb_user(
+create table if not exists tb_operator(
 	id int auto_increment primary key comment '用户编号(主键)',
 	username varchar(50) not null comment '用户名',
 	password varchar(50) not null comment '密码',
